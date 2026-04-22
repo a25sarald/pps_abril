@@ -1,3 +1,5 @@
+'''
+ejercicio 1
 pipeline {
     agent any
     stages {
@@ -14,6 +16,23 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Tarefas para desplegar, construir, ...'
+            }
+        }
+    }
+}
+'''
+
+'''
+ejercicio 2
+'''
+pipeline {
+    agent {
+        docker { image 'python:3' }
+    }
+    stages {
+        stage('Test') {
+            steps {
+                sh 'python test_utils.py'
             }
         }
     }
